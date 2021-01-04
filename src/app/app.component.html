@@ -24,6 +24,22 @@
             class="form-control"
           />
         </div>
+        <span
+          *ngIf="
+            !projectForm.get('projectName').valid &&
+            projectForm.get('projectName').touched
+          "
+          class="help-block"
+        >
+          <span
+            *ngIf="projectForm.get('projectName').errors['nameIsForbidden']"
+          >
+            This is an invalid name!</span
+          >
+          <span *ngIf="projectForm.get('projectName').errors['required']">
+            This is a required field!
+          </span>
+        </span>
         <div class="form-group">
           <label for="email">Mail</label>
           <input
@@ -33,6 +49,14 @@
             class="form-control"
           />
         </div>
+        <span
+          *ngIf="
+            !projectForm.get('email').valid && projectForm.get('email').touched
+          "
+          class="help-block"
+        >
+          Please enter a valid email!
+        </span>
         <div class="form-group">
           <label for="status">Status</label>
           <select
