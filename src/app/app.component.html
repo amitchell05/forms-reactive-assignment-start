@@ -24,14 +24,6 @@
             class="form-control"
           />
         </div>
-        <span
-          *ngIf="
-            !projectForm.get('projectName').valid &&
-            projectForm.get('projectName').touched
-          "
-          class="help-block"
-          >Please enter a valid name!
-        </span>
         <div class="form-group">
           <label for="email">Mail</label>
           <input
@@ -41,24 +33,16 @@
             class="form-control"
           />
         </div>
-        <span
-          *ngIf="
-            !projectForm.get('email').valid && projectForm.get('email').touched
-          "
-          class="help-block"
-        >
-          Please enter a valid email!
-        </span>
         <div class="form-group">
-          <label for="status">Status</label>
+          <label for="status">Project Status</label>
           <select
             id="status"
             formControlName="projectStatus"
             class="form-control"
           >
-            <option *ngFor="let status of statusOptions" [value]="status">
-              {{ status }}
-            </option>
+            <option value="stable">Stable</option>
+            <option value="critical">Critical</option>
+            <option value="finished">Finished</option>
           </select>
         </div>
         <button class="btn btn-primary" type="submit">Create Project</button>
