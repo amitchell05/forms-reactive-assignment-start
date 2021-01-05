@@ -30,15 +30,7 @@
             projectForm.get('projectName').touched
           "
           class="help-block"
-        >
-          <span
-            *ngIf="projectForm.get('projectName').errors['nameIsForbidden']"
-          >
-            This is an invalid name!</span
-          >
-          <span *ngIf="projectForm.get('projectName').errors['required']">
-            This is a required field!
-          </span>
+          >Please enter a valid name!
         </span>
         <div class="form-group">
           <label for="email">Mail</label>
