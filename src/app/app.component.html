@@ -14,12 +14,12 @@
 
           Upon submitting the form, simply print the value to the console
       -->
-      <form [formGroup]="projectForm" (ngSubmit)="onSubmit()">
+      <form [formGroup]="projectForm" (ngSubmit)="onSaveProject()">
         <div class="form-group">
-          <label for="projectName">Project Name</label>
+          <label for="name">Project Name</label>
           <input
             type="text"
-            id="projectName"
+            id="name"
             formControlName="projectName"
             class="form-control"
           />
@@ -53,16 +53,15 @@
           <label for="status">Status</label>
           <select
             id="status"
-            formControlName="status"
+            formControlName="projectStatus"
             class="form-control"
-            name="status"
           >
             <option *ngFor="let status of statusOptions" [value]="status">
               {{ status }}
             </option>
           </select>
         </div>
-        <button class="btn btn-primary" type="submit">Submit</button>
+        <button class="btn btn-primary" type="submit">Create Project</button>
       </form>
     </div>
   </div>

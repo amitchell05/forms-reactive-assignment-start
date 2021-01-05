@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
         this.forbiddenNames
       ),
       email: new FormControl(null, [Validators.required, Validators.email]),
-      status: new FormControl('Stable'),
+      projectStatus: new FormControl('Critical'),
     });
   }
 
@@ -47,7 +47,7 @@ export class AppComponent implements OnInit {
     return promise;
   }
 
-  onSubmit() {
+  onSaveProject() {
     console.log(this.projectForm.value);
     this.projectForm.reset();
   }
